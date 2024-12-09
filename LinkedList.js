@@ -83,16 +83,34 @@ export default class LinkedList {
     }
     find(val) {
         let head = this.head;
+        console.log(head);
         let index = 0;
         while (head.next != null) {
             let value = head.value;
-
+            console.log(value);
             if (value == val) {
                 console.log("value: " + value);
                 return index;
             }
             index++;
             head = head.next;
+        }
+    }
+    findNode(hashKey) {
+        let head = this.head;
+        console.log(head);
+        if (head == null) {
+            return false;
+        }
+        while (head.next != null) {
+            let key = head.key;
+            if (key == hashKey) {
+                console.log("value: " + head.value);
+                return head.value;
+            } else {
+                head = head.next;
+                return head.value;
+            }
         }
     }
     toString() {

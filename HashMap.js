@@ -16,19 +16,32 @@ export default class HashMap {
 
         if (currentNode === null) {
             let list = new LinkedList();
-            console.log(list.head);
             list.append(key, value);
             this.buckets[index] = list;
             currentNode = list;
         } else {
-            console.log(currentNode);
             currentNode.append(key, value);
         }
-        console.log(this.buckets);
     }
     get(key) {
         // take the key, hash it, get the index
-        // look through the linked list at that index for the key, return the value if found, null if not
-        return;
+        let index = Math.floor(this.hash(key) % this.capacity);
+        //console.log(index);
+        let linkedList = this.buckets[index];
+        //console.log(linkedList);
+        if (linkedList.head == null) return null;
+        else {
+            return linkedList.findNode(key);
+        }
+    }
+    has(key) {
+        let index = Math.floor(this.hash(key) % this.capacity);
+        //console.log(index);
+        let linkedList = this.buckets[index];
+        //console.log(linkedList);
+        if (linkedList == null) return false;
+        else if (linkedList.findNode(key)) {
+            return true;
+        }
     }
 }
