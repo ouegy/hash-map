@@ -98,7 +98,6 @@ export default class LinkedList {
     }
     findNode(hashKey) {
         let head = this.head;
-        console.log(head);
         if (head == null) {
             return false;
         }
@@ -121,6 +120,11 @@ export default class LinkedList {
             head = head.next;
         }
         return result;
+    }
+    removeAtIndex(index) {
+        // if it is the last item pop()
+        // if it is the first item set head to second item
+        //  if it is in the nth item, point n-1 item to n+1 item
     }
 }
 

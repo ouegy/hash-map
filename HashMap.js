@@ -44,4 +44,37 @@ export default class HashMap {
             return true;
         }
     }
+    remove(key) {
+        if (this.has(key) == false) return false;
+        let index = Math.floor(this.hash(key) % this.capacity);
+        let linkedList = this.buckets[index];
+        linkedList.removeAtIndex(index);
+    }
+    length() {
+        // loop buckets array
+        // if not null use linkedList.size()
+        // += to length variable
+        // return length outside of the loop
+    }
+    clear() {
+        // reinstantiate the buckets array ??
+    }
+    keys() {
+        // loop buckets array
+        // if not null use linkedList.traverse()
+        // push head.key to keys array
+        // return keys array
+    }
+    values() {
+        // loop buckets array
+        // if not null use linkedList.traverse()
+        // push head.value to values array
+        // return values array
+    }
+    entries() {
+        // loop buckets array
+        // if not null use linkedList.traverse()
+        // push key value pair to entries array
+        // return entries array
+    }
 }
