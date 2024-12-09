@@ -15,6 +15,9 @@ hash.set("jacket", "blue");
 hash.set("kite", "pink");
 hash.set("lion", "golden");
 
+// hash.remove("elephant");
+console.log(hash.length());
+
 console.log(hash);
 
 console.log(hash.get("frog"));
@@ -22,3 +25,7 @@ console.log(hash.get("hat"));
 console.log(hash.has("frog"));
 console.log(hash.has("hat"));
 console.log(hash.has("poo"));
+
+hash.clear();
+
+console.log(hash);

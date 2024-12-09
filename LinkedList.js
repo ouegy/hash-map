@@ -121,9 +121,23 @@ export default class LinkedList {
         }
         return result;
     }
-    removeAtIndex(index) {
-        // if it is the last item pop()
+    removeByKey(key, arrayIndex) {
+        // if it is the last item in the linked list pop()
+        let size = this.size();
+        let head = this.head;
+
+        if (size - 1 == arrayIndex) {
+            this.pop();
+            return true;
+        }
         // if it is the first item set head to second item
+        else if (arrayIndex == 0) {
+            head = this.head.next;
+        } else {
+            let beforeNode = this.at(index - 1);
+            let afterNode = this.at(index + 1);
+            beforeNode.next = afterNode;
+        }
         //  if it is in the nth item, point n-1 item to n+1 item
     }
 }
